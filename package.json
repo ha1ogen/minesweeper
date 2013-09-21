@@ -1,19 +1,16 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "minesweeper",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "minesweeper Sample Application",
   "keywords": [
-    "OpenShift",
-    "Node.js",
-    "application",
-    "openshift"
+    "minesweeper",
+    "Node.js"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url":  "http://www.openshift.com/"
+    "name": "trevor weng",
+    "email": "trevor_weng@hotmail.com",
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://trevor.webatu.com/",
   "repository": {
     "type": "git",
     "url": "https://gitub.com/openshift/origin-server"
@@ -25,6 +22,9 @@
   },
 
   "dependencies": {
+    "socket.io": "~0.9.16",
+    "node-fs": "~0.1.6",
+    "express": "~2.5.11"
   },
   "devDependencies": {},
   "bundleDependencies": [],
