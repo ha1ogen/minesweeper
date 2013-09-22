@@ -1,7 +1,7 @@
 var game, socket, singlePlayer = false, matchinprogress = false;
 
 if (typeof io !== "undefined"){
-	socket = io.connect(window.location.href);
+	socket = io.connect("http://minesweeper-trevor.rhcloud.com:8000/");
 }
 window.onload = function(){
 	game = new Game();
