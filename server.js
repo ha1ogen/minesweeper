@@ -1,27 +1,20 @@
 #!/bin/env node
 
-var app = require('express').createServer(),
-    io = require('socket.io').listen(app);
+var express = require('express'),
+    app = express(),
+    http = require('http').Server(app),
+    io = require('socket.io')(http)
+    path = require('path');
 
 var waitingUsers = [];
 var currentGames = {};
 
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var port = process.env.OPENSHIFT_NODEJS_PORT || 9000
 , ip = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-app.listen(port, ip);
 
-app.get('/', function (req, res) {
-    res.sendfile(__dirname + '/index.html');
-});
-app.get('/styles.css', function (req, res) {
-    res.sendfile(__dirname + '/styles.css');
-});
-app.get('/minesweeper.js', function (req, res) {
-    res.sendfile(__dirname + '/minesweeper.js');
-});
-app.get('/cell.js', function (req, res) {
-    res.sendfile(__dirname + '/cell.js');
-});
+http.listen(port, ip);
+
+app.use('/', express.static('public'));
 
 io.sockets.on('connection', function (socket) {
 

@@ -22,9 +22,9 @@
   },
 
   "dependencies": {
-    "socket.io": "~0.9.16",
-    "node-fs": "~0.1.6",
-    "express": "~2.5.11"
+    "socket.io": "*",
+    "node-fs": "*",
+    "express": "*"
   },
   "devDependencies": {},
   "bundleDependencies": [],
